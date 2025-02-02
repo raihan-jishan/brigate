@@ -4,9 +4,9 @@ const Logo = () => {
   return (
     <a href="#" className="-m-1.5 p-1.5 flex   ">
       <span>
-        <RiBuilding2Line className="text-orange-800 text-3xl max-lg:text-2xl" />{" "}
+        <RiBuilding2Line className="text-orange-800 text-3xl max-lg:text-3xl" />{" "}
       </span>
-      <span className="text-2xl font-bold max-lg:text-xl">Brigate</span>
+      <span className="text-2xl font-bold max-lg:text-2xl">Brigate</span>
     </a>
   );
 };

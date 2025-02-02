@@ -81,7 +81,7 @@ const Footer = () => {
                 <li>
                   <Button
                     className={buttonVariants({
-                      className: "p-8 px-12  rounded-full max-lg:px-32",
+                      className: "p-8 px-12     rounded-full max-lg:px-20",
                     })}
                   >
                     <FaGooglePlay size={30} /> Play Store
@@ -91,7 +91,7 @@ const Footer = () => {
                 <li>
                   <Button
                     className={buttonVariants({
-                      className: "p-8 px-12  rounded-full max-lg:px-32",
+                      className: "p-8 px-12    rounded-full max-lg:px-20",
                     })}
                   >
                     <IoLogoAppleAppstore size={30} /> IOS Store

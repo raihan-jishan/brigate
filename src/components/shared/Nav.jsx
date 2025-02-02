@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { HiMiniBars3BottomRight } from "react-icons/hi2";
+import { IoIosClose } from "react-icons/io";
 import { PiPaintBrushBroadBold } from "react-icons/pi";
 import { navLinkData } from "../../constants";
 import { BtnPrimary } from "../ui/button";
@@ -47,25 +49,12 @@ const Nav = () => {
             onClick={toggleMenu} // Toggle menu on click
           >
             <span className="sr-only">Open main menu</span>
-            <svg
-              className="size-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              />
-            </svg>
+            <HiMiniBars3BottomRight className="h-8 w-8" aria-hidden="true" />
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navLinkData.map((item, index) => (
-            <NavLink key={index} label={item.name} path={item.path}/>
+            <NavLink key={index} label={item.name} path={item.path} />
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -89,20 +78,7 @@ const Nav = () => {
               onClick={toggleMenu} // Close menu on click
             >
               <span className="sr-only">Close menu</span>
-              <svg
-                className="size-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+              <IoIosClose className="h-12 w-12" size={30} aria-hidden="true" />
             </button>
           </div>
           <div className="mt-6 flow-root">
@@ -111,7 +87,8 @@ const Nav = () => {
                 {navLinkData.map((item, index) => (
                   <a
                     key={index}
-                    href={item.href}
+                    href={item.path}
+                    onClick={toggleMenu} // Close menu on click
                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                   >
                     {item.name}
@@ -119,12 +96,11 @@ const Nav = () => {
                 ))}
               </div>
               <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                >
-                  Log in
-                </a>
+                <BtnPrimary
+                  label={"Work with Us"}
+                  icon={<PiPaintBrushBroadBold size={25} />}
+                  variant={"nav"}
+                />
               </div>
             </div>
           </div>
